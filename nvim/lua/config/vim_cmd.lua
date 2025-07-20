@@ -1,11 +1,10 @@
 local opt = vim.opt
 local cmd = vim.cmd
 
--- Setting plugins up
+-- setting plugins up
 cmd('filetype plugin indent on')
 
-
--- Tab/Space settings
+-- tab/space settings
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
@@ -16,5 +15,21 @@ opt.smartindent = true
 opt.number = true
 opt.relativenumber = true
 
--- Misc configs
+-- search settings
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = false
+opt.incsearch = true
+
+-- visual settings
+opt.colorcolumn = "100"
+opt.signcolumn = "yes"
+
+-- file handling
+opt.undofile = true
+opt.autoread = true
+
+-- misc configs
 opt.clipboard = "unnamedplus"
+opt.iskeyword:append("-")
+opt.mouse = "a"

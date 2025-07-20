@@ -8,7 +8,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls", "omnisharp" },
+            ensure_installed = { "lua_ls", "omnisharp", "ts_ls"},
         },
         dependencies = {
             "williamboman/mason.nvim",
@@ -18,6 +18,7 @@ return {
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({})
             lspconfig.omnisharp.setup({})
+            lspconfig.ts_ls.setup({})
         end
     },
 }
