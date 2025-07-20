@@ -10,7 +10,7 @@ local builtin = require("telescope.builtin")
 map('n', '<C-p>', builtin.find_files, { desc = 'Find files in the working directory'})
 map('n', '<leader>f', builtin.live_grep, { desc = 'Live GREPs the working directory'})
 map('n', '<C-b>', ':Neotree filesystem reveal left<CR>', { desc = 'Opens the explorer'})
-
+map('n', '<C-CR>', '<C-]>', { desc = 'go-to-definition' })
 
 -- Splitter resizing and stuff
 
@@ -18,7 +18,6 @@ map('n', '<A-S-k>', '<cmd>resize +2<CR>', { desc = 'Increase window height' })
 map('n', '<A-S-j>', '<cmd>resize -2<CR>', { desc = 'Decrease window height' })
 map('n', '<A-S-h>', '<cmd>vertical resize -2<CR>', { desc = 'Decrease window width' })
 map('n', '<A-S-l>', '<cmd>vertical resize +2<CR>', { desc = 'Increase window width' })
-
 map('n', '<A-h>', '<C-w>h', { desc = 'Move to left window' })
 map('n', '<A-j>', '<C-w>j', { desc = 'Move to bottom window' })
 map('n', '<A-k>', '<C-w>k', { desc = 'Move to top window' })
@@ -30,3 +29,4 @@ map('n', 'K', vim.lsp.buf.hover, { desc = 'Display info over function'})
 map('n', 'gd', vim.lsp.buf.definition, { })
 map({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { })
 map('n', '<leader>d', '"_dd', { noremap = true, silent = true })
+
