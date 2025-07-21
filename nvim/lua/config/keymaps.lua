@@ -26,6 +26,7 @@ map('n', '<A-l>', '<C-w>l', { desc = 'Move to right window' })
 -- LSP Keymaps
 
 map('n', 'K', vim.lsp.buf.hover, { desc = 'Display info over function'})
+map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
 map('n', 'gd', vim.lsp.buf.definition, { })
 map({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { })
 map('n', '<leader>d', '"_dd', { noremap = true, silent = true })
