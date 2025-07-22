@@ -8,11 +8,13 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls", "omnisharp", "ts_ls"},
+            ensure_installed = { "lua_ls", "omnisharp", "ts_ls", "bash-language-server"},
         },
         dependencies = {
             "williamboman/mason.nvim",
             "neovim/nvim-lspconfig",
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
             local lspconfig = require("lspconfig")
@@ -30,7 +32,9 @@ return {
             lspconfig.ts_ls.setup({
                 capabilities = capabilities,
             })
-
+            lspconfig.bashls.setup({
+                capabilities = capabilities,
+            })
         end
     },
 }
