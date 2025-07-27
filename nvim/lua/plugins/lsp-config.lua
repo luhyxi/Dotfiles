@@ -8,7 +8,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls", "omnisharp", "ts_ls", "bash-language-server"},
+            ensure_installed = { "lua_ls", "omnisharp", "ts_ls", "bash-language-server", "biome"},
         },
         dependencies = {
             "williamboman/mason.nvim",
@@ -34,6 +34,15 @@ return {
             })
             lspconfig.bashls.setup({
                 capabilities = capabilities,
+            })
+            lspconfig.biome.setup({
+                capabilities = capabilities,
+            })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.json" },
+                callback = function()
+                    vim.lsp.buf.format({ timeout_ms = 1000 })
+                end,
             })
         end
     },

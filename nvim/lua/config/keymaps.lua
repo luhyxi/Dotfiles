@@ -14,8 +14,8 @@ map('n', '<C-CR>', '<C-]>', { desc = 'go-to-definition' })
 -- Tab stuff
 map('n', '<leader>tt', ':tabnew<CR>', { desc = 'New tab' })
 map('n', '<leader>tq', ':tabclose<CR>', { desc = 'Close tab' })
-map('n', '<A-,>', 'gT', { desc = 'Go to previous tab' })
-map('n', '<A-.>', 'gt', { desc = 'Go to next tab' })
+map('n', '<C-,>', 'gT', { desc = 'Go to previous tab' })
+map('n', '<C-.>', 'gt', { desc = 'Go to next tab' })
 
 -- Splitter resizing and stuff
 map('n', '<A-S-k>', '<cmd>resize +2<CR>', { desc = 'Increase window height' })
