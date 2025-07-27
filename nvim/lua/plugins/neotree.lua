@@ -1,3 +1,7 @@
+-- disabling it temporarily
+return { }
+
+--[[
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -11,3 +15,4 @@ return {
         opts = { },
     }  
 }
+--]]
