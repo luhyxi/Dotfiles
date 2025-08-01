@@ -1,3 +1,6 @@
+--omnisharp setup
+local pid = vim.fn.getpid()
+
 return {
     {
         "hrsh7th/nvim-cmp",
@@ -8,13 +11,12 @@ return {
             "hrsh7th/cmp-cmdline",
             "saadparwaiz1/cmp_luasnip",
             "L3MON4D3/LuaSnip",
-            "rafamadriz/friendly-snippets", -- This provides VSCode-style snippets
+            "rafamadriz/friendly-snippets",
         },
     },
     {
         "williamboman/mason.nvim",
         opts = {
-            ensure_installed = { "csharpier", "netcoredbg" }
         }
     },
     {
@@ -25,13 +27,15 @@ return {
                 nls.formatting.biome.with({
                     args = { "format", "--stdin-file-path", "$FILENAME" },
                 }),
+                nls.formatting.gofmt,
+                nls.formatting.goimports,
             })
         end,
     },
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls", "omnisharp", "ts_ls", "bash-language-server", "biome"},
+            ensure_installed = { "lua_ls", "ts_ls", "bash-language-server", "biome", "omnisharp", "gopls" }
         },
         dependencies = {
             "williamboman/mason.nvim",
@@ -47,9 +51,6 @@ return {
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
             })
-            lspconfig.omnisharp.setup({
-                capabilities = capabilities,
-            })
             lspconfig.ts_ls.setup({
                 capabilities = capabilities,
                 documentFormattingProvider = false,
@@ -59,6 +60,25 @@ return {
             })
             lspconfig.biome.setup({
                 capabilities = capabilities,
+            })
+            lspconfig.omnisharp.setup({
+                capabilities = capabilities,
+                root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", "omnisharp.json", "function.json", "global.json"),
+                filetypes = { "cs", "vb" },
+                -- this was the only way i managed to link omnisharp to my neovim rn
+                cmd = { "/home/luana/.local/share/nvim/mason/packages/omnisharp/OmniSharp", "--languageserver", "--hostPID", tostring(pid) },
+            })
+            lspconfig.gopls.setup({
+                capabilities = capabilities,
+                settings = {
+                    gopls = {
+                        analyses = {
+                            unusedparams = true,
+                        },
+                        staticcheck = true,
+                        gofumpt = true,
+                    },
+                },
             })
             vim.api.nvim_create_autocmd("BufWritePre", {
                 pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.json" },
