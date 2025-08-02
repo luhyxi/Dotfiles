@@ -19,6 +19,7 @@
 # Path settings
 export PATH=$HOME/.config/composer/vendor/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # Default applications
 export EDITOR=nvim
