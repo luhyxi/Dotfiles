@@ -6,7 +6,7 @@ local map = vim.keymap.set
 local builtin = require("telescope.builtin")
 
 -- Explorer stuff
-map('n', '<C-p>', builtin.find_files, { desc = 'Find files in the working directory'})
+map('n', '<leader>g', builtin.find_files, { desc = 'Find files in the working directory'})
 map('n', '<leader>f', builtin.live_grep, { desc = 'Live GREPs the working directory'})
 -- map('n', '<C-b>', ':Neotree filesystem reveal left<CR>', { desc = 'Opens the explorer'})
 map('n', '<C-CR>', '<C-]>', { desc = 'go-to-definition' })
@@ -36,3 +36,7 @@ map('n', 'd', '"_d', { noremap = true, silent = true, desc = 'Delete without cop
 map('v', 'd', '"_d', { noremap = true, silent = true, desc = 'Delete without copying' })
 map({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { desc = 'Show avalible code actions' })
 map('n', '<leader>=', 'gg=G<C-o><C-o>', { desc = 'Format entire file with = operator' })
+
+-- Vim WikiStuff
+map('n', '<C-.>', '<Plug>VimwikiToggleListItem', { desc = 'Toggle list item checkbox' })
+map('i', '<C-.>', '<Plug>VimwikiToggleListItem', { desc = 'Toggle list item checkbox' })
