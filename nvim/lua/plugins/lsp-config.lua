@@ -1,24 +1,52 @@
 local pid = vim.fn.getpid()
 return {
     {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline",
-            "hrsh7th/cmp-calc", -- Math calculations
-            "hrsh7th/cmp-emoji", -- Emoji completions
-            "saadparwaiz1/cmp_luasnip",
-            "L3MON4D3/LuaSnip",
-            "rafamadriz/friendly-snippets",
-            "windwp/nvim-autopairs", -- Auto-close brackets/quotes
+        "saghen/blink.cmp",
+        lazy = false, -- lazy loading handled internally
+        dependencies = "rafamadriz/friendly-snippets",
+        version = "v0.*",
+        opts = {
+            keymap = { preset = "default" },
+            appearance = {
+                use_nvim_cmp_as_default = true,
+                nerd_font_variant = "mono",
+            },
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer" },
+                providers = {
+                    buffer = {
+                        min_keyword_length = 1,
+                    },
+                    path = {
+                        min_keyword_length = 0,
+                    },
+                },
+            },
+            completion = {
+                accept = {
+                    auto_brackets = {
+                        enabled = true,
+                    },
+                },
+                menu = {
+                    draw = {
+                        treesitter = { "lsp" },
+                    },
+                },
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 200,
+                },
+            },
+            signature = {
+                enabled = true,
+            },
+            cmdline = {
+                keymap = { preset = "inherit" },
+                completion = { menu = { auto_show = true } },
+            },
         },
-    },
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = true,
+        opts_extend = { "sources.default" },
     },
     {
         "williamboman/mason.nvim",
@@ -38,12 +66,11 @@ return {
                 }),
                 nls.formatting.gofmt,
                 nls.formatting.goimports,
-                -- Additional formatters
                 nls.formatting.prettier.with({
                     filetypes = { "html", "css", "scss", "less", "yaml", "markdown" },
                 }),
-                nls.formatting.stylua, -- Lua formatter
-                nls.code_actions.gitsigns, -- Git actions
+                nls.formatting.stylua,
+                nls.code_actions.gitsigns,
             })
         end,
     },
@@ -55,18 +82,11 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "neovim/nvim-lspconfig",
-            "hrsh7th/nvim-cmp",
-            "hrsh7th/cmp-nvim-lsp",
+            "saghen/blink.cmp",
         },
         config = function()
             local lspconfig = require("lspconfig")
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-            -- Enhanced capabilities for better completion
-            capabilities.textDocument.completion.completionItem.snippetSupport = true
-            capabilities.textDocument.completion.completionItem.resolveSupport = {
-                properties = { "documentation", "detail", "additionalTextEdits" },
-            }
+            local capabilities = require("blink.cmp").get_lsp_capabilities()
 
             -- Common LSP keymaps and on_attach function
             local on_attach = function(client, bufnr)
