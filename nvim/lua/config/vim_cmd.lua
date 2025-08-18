@@ -2,7 +2,7 @@ local opt = vim.opt
 local cmd = vim.cmd
 
 -- setting plugins up
-cmd('filetype plugin indent on')
+--cmd('filetype plugin indent on')
 
 -- tab/space settings
 opt.tabstop = 4
@@ -22,7 +22,7 @@ opt.hlsearch = false
 opt.incsearch = true
 
 -- visual settings
-opt.colorcolumn = "100"
+opt.colorcolumn = "140"
 opt.signcolumn = "yes"
 
 -- file handling

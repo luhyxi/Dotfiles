@@ -30,6 +30,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export INPUT_METHOD=fcitx
+export OMNISHARP=$HOME/.local/share/nvim/mason/packages/omnisharp/OmniSharp
 
 # History settings
 export HISTSIZE=10000
@@ -70,7 +71,7 @@ alias nconf='cd ~/.config/nvim'
 alias sn='sudo nvim'
 alias sv='sudo nvim'
 alias xstart='n ~/.xinitrc'
-alias dotnet='sudo $HOME/.dotnet/dotnet'
+alias dotnet='$HOME/.dotnet/dotnet'
 
 # System
 alias p='sudo pacman'
