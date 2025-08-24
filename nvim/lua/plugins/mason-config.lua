@@ -11,7 +11,7 @@ return {
 
     config = function()
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "ts_ls", "biome", "omnisharp", "gopls" },
+            ensure_installed = { "lua_ls", "ts_ls", "biome", "gopls" },
             automatic_installation = true,
         })
 
@@ -77,38 +77,39 @@ return {
         })
 
         -- omnisharp
-        lspconfig.omnisharp.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            root_dir = lspconfig.util.root_pattern(
-                "*.sln",
-                "*.csproj",
-                "omnisharp.json",
-                "function.json",
-                "global.json"
-            ),
-            filetypes = { "cs", "vb" },
-            cmd = {
-                "/home/luana/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll",
-                "--languageserver",
-                "--hostPID",
-                tostring(pid),
-            },
-            settings = {
-                FormattingOptions = {
-                    EnableEditorConfigSupport = true,
-                    OrganizeImports = true,
-                },
-                MsBuild = {
-                    LoadProjectsOnDemand = true,
-                },
-                RoslynExtensionsOptions = {
-                    EnableAnalyzersSupport = true,
-                    EnableImportCompletion = true,
-                },
-            },
-        })
+        -- lspconfig.omnisharp.setup({
+        --     capabilities = capabilities,
+        --     on_attach = on_attach,
+        --     root_dir = lspconfig.util.root_pattern(
+        --         "*.sln",
+        --         "*.csproj",
+        --         "omnisharp.json",
+        --         "function.json",
+        --         "global.json"
+        --     ),
+        --     filetypes = { "cs", "vb" },
+        --     cmd = {
+        --         "/home/luana/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll",
+        --         "--languageserver",
+        --         "--hostPID",
+        --         tostring(pid),
+        --     },
+        --     settings = {
+        --         FormattingOptions = {
+        --             EnableEditorConfigSupport = true,
+        --             OrganizeImports = true,
+        --         },
+        --         MsBuild = {
+        --             LoadProjectsOnDemand = true,
+        --         },
+        --         RoslynExtensionsOptions = {
+        --             EnableAnalyzersSupport = true,
+        --             EnableImportCompletion = true,
+        --         },
+        --     },
+        -- })
 
+        -- go
         lspconfig.gopls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
