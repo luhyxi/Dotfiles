@@ -72,6 +72,8 @@ alias sn='sudo nvim'
 alias sv='sudo nvim'
 alias xstart='n ~/.xinitrc'
 alias dotnet='$HOME/.dotnet/dotnet'
+alias z='zoxide'
+
 
 # System
 alias p='sudo pacman'
@@ -177,3 +179,7 @@ fi
 if [ -f "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
+
+# zoxide
+eval "$(zoxide init bash)"
+

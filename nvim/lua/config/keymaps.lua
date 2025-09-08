@@ -5,7 +5,7 @@ local builtin = require("telescope.builtin")
 -- Explorer stuff
 map("n", "<leader>f", builtin.find_files, { desc = "Find files in the working directory" })
 map("n", "<leader>g", builtin.live_grep, { desc = "Live GREPs the working directory" })
-
+map("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
 -- Tab stuff
 map("n", "<leader>tt", ":tabnew<CR>", { desc = "New tab" })
 map("n", "<leader>tq", ":tabclose<CR>", { desc = "Close tab" })
