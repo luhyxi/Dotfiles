@@ -1,5 +1,3 @@
-local pid = vim.fn.getpid()
-
 return {
     "williamboman/mason-lspconfig.nvim",
 
@@ -75,39 +73,6 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
         })
-
-        -- omnisharp
-        -- lspconfig.omnisharp.setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach,
-        --     root_dir = lspconfig.util.root_pattern(
-        --         "*.sln",
-        --         "*.csproj",
-        --         "omnisharp.json",
-        --         "function.json",
-        --         "global.json"
-        --     ),
-        --     filetypes = { "cs", "vb" },
-        --     cmd = {
-        --         "/home/luana/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll",
-        --         "--languageserver",
-        --         "--hostPID",
-        --         tostring(pid),
-        --     },
-        --     settings = {
-        --         FormattingOptions = {
-        --             EnableEditorConfigSupport = true,
-        --             OrganizeImports = true,
-        --         },
-        --         MsBuild = {
-        --             LoadProjectsOnDemand = true,
-        --         },
-        --         RoslynExtensionsOptions = {
-        --             EnableAnalyzersSupport = true,
-        --             EnableImportCompletion = true,
-        --         },
-        --     },
-        -- })
 
         -- go
         lspconfig.gopls.setup({
