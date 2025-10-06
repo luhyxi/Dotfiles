@@ -16,6 +16,34 @@ return {
         local lspconfig = require("lspconfig")
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+        -- shared on_attach for all LSPs
+        local on_attach = function(client, bufnr)
+            -- Disable formatting from ts_ls; we'll use Biome instead for JS/TS/JSON
+            if client.name == "ts_ls" then
+                client.server_capabilities.documentFormattingProvider = false
+            end
+
+            -- Format on save, preferring Biome for JS/TS/JSON/JSONC
+            local augroup = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = false })
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                    local ft = vim.bo[bufnr].filetype
+                    vim.lsp.buf.format({
+                        bufnr = bufnr,
+                        filter = function(format_client)
+                            if ft == "javascript" or ft == "javascriptreact" or ft == "typescript" or ft == "typescriptreact" or ft == "json" or ft == "jsonc" then
+                                return format_client.name == "biome"
+                            end
+                            return true
+                        end,
+                    })
+                end,
+            })
+        end
+
         -- General configs for every single lsp
         -- lua_ls
         lspconfig.lua_ls.setup({
