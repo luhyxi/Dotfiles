@@ -6,6 +6,8 @@ local builtin = require("telescope.builtin")
 map("n", "<leader>f", builtin.find_files, { desc = "Find files in the working directory" })
 map("n", "<leader>g", builtin.live_grep, { desc = "Live GREPs the working directory" })
 map("n", "<leader>b", builtin.buffers, { desc = "Opens GREP for recent buffers" })
+map("n", "<leader>q", ":quit<CR>", { desc = "Quits buffer" })
+map("n", "<leader>w", ":write<CR>",{ desc = "Writes to buffer" })
 
 -- Tab stuff
 map("n", "<leader>tt", ":tabnew<CR>", { desc = "New tab" })

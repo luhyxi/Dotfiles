@@ -35,3 +35,4 @@ opt.iskeyword:append("-")
 opt.mouse = "a"
 opt.wrap = false
 opt.whichwrap:append("<,>,h,l,[,]")
+opt.winborder = "rounded"
