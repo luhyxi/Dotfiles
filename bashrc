@@ -88,9 +88,6 @@ alias getclip='xclip -selection c -o'
 # Database
 alias pgs='sudo -u postgres psql'
 
-# Custom
-alias keybind='cat $HOME/Documents/keybinders.md'
-
 # -----------------------------------------------------------------------------
 # FUNCTIONS
 # -----------------------------------------------------------------------------
@@ -134,7 +131,12 @@ extract() {
 
 # Find text in files
 ftext() {
-  grep -r "$1" .
+  rg "$1" .
+}
+
+# Use bat instead of cat for printing files
+catt() {
+    bat --style="plain,rule,header" --paging=never --italic-text=always $@
 }
 
 # -----------------------------------------------------------------------------
