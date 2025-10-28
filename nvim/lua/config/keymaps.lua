@@ -10,6 +10,9 @@ map("n", "<leader>b", builtin.buffers, { desc = "Opens GREP for recent buffers" 
 map("n", "<leader>q", ":quit<CR>", { desc = "Quits buffer" })
 map("n", "<leader>w", ":write<CR>", { desc = "Writes to buffer" })
 
+-- Insert mode stuff
+map("i", "<A-d>", [[<Esc>dwi]], { noremap = true, silent = true, desc = "Deletes next word" })
+
 -- Tab stuff
 map("n", "<leader>tt", ":tabnew<CR>", { desc = "New tab" })
 map("n", "<leader>tq", ":tabclose<CR>", { desc = "Close tab" })
@@ -33,10 +36,10 @@ map("n", "gd", vim.lsp.buf.definition, {})
 map("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
 
 map(
-	"n",
-	"grr",
-	vim.lsp.buf.references,
-	{ desc = "Lists all the references to the symbol under the cursor in the quickfix window" }
+    "n",
+    "grr",
+    vim.lsp.buf.references,
+    { desc = "Lists all the references to the symbol under the cursor in the quickfix window" }
 )
 
 map("n", "d", '"_d', { noremap = true, silent = true, desc = "Delete without copying" })

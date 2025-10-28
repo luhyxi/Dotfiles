@@ -9,6 +9,7 @@ return {
                 nls.formatting.prettier.with({
                     filetypes = { "html", "css", "scss", "less", "yaml", "markdown" },
                 }),
+                nls.formatting.csharpier,
                 nls.formatting.stylua,
                 nls.code_actions.gitsigns,
             })

@@ -20,6 +20,7 @@
 export PATH=$HOME/.config/composer/vendor/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:/.dotnet/tools
 
 # Default applications
 export EDITOR=nvim
@@ -49,10 +50,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # File operations
-alias ls='ls --color=auto'
-alias ll='ls -la'
-alias la='ls -A'
-alias l='ls -CF'
+# Fancy eza aliases
+alias ls='eza --color=auto --icons --group-directories-first'
+alias ll='eza -l --icons --group-directories-first --git'
+alias la='eza -la --icons --group-directories-first --git'
+alias l='eza -1 --icons --group-directories-first'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
