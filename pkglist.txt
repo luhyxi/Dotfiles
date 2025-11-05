@@ -1,0 +1,17 @@
+neovim
+git
+yazi
+fd
+rg
+fzf
+zoxide
+xclip
+wl-clipboard
+bat
+eza
+tmux
+dotnet-runtime
+dotnet-sdk
+curl
+cowsay
+
