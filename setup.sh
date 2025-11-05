@@ -11,6 +11,9 @@ ln -sf ~/Dotfiles/bashrc ~/.bashrc
 ln -sf ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -sf ~/Dotfiles/kitty/current-theme.conf ~/.config/kitty/current-theme.conf
 
+# Link tmux configuration
+ln -sf ~/Dotfiles/tmux.conf ~/.tmux.conf
+
 # Link nvim configuration (entire directory)
 rm -rf ~/.config/nvim
 ln -sf ~/Dotfiles/nvim ~/.config/nvim

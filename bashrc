@@ -90,6 +90,10 @@ alias getclip='xclip -selection c -o'
 # Database
 alias pgs='sudo -u postgres psql'
 
+# WSL Stuff
+alias win='cd /mnt/c/Users/4960042776'
+
+
 # -----------------------------------------------------------------------------
 # FUNCTIONS
 # -----------------------------------------------------------------------------
