@@ -20,7 +20,7 @@
 export PATH=$HOME/.config/composer/vendor/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:/.dotnet/tools
+export PATH=$HOME/.dotnet/tools:$PATH
 
 # Default applications
 export EDITOR=nvim
@@ -32,6 +32,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export INPUT_METHOD=fcitx
 export OMNISHARP=$HOME/.local/share/nvim/mason/packages/omnisharp/OmniSharp
+export DOTNET_ROOT=$HOME/.dotnet
 
 # History settings
 export HISTSIZE=10000
@@ -73,7 +74,6 @@ alias nconf='cd ~/.config/nvim'
 alias sn='sudo nvim'
 alias sv='sudo nvim'
 alias xstart='n ~/.xinitrc'
-alias dotnet='$HOME/.dotnet/dotnet'
 alias z='zoxide'
 
 
