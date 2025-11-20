@@ -3,8 +3,8 @@ return {
         "williamboman/mason.nvim",
         opts = {
             registries = {
-                'github:Crashdummyy/mason-registry', -- Add this registry
-                'github:mason-org/mason-registry',
+                "github:Crashdummyy/mason-registry", -- Add this registry
+                "github:mason-org/mason-registry",
             },
         },
     },
@@ -12,13 +12,13 @@ return {
         "lewis6991/gitsigns.nvim",
         opts = {},
     },
-        "williamboman/mason-lspconfig.nvim",
-        opts = {
-            ensure_installed = { "lua_ls", "ts_ls", "biome", "omnisharp", "gopls" },
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+        ensure_installed = { "ts_ls", "biome", "omnisharp", "gopls" },
     },
-        dependencies = {
-            "williamboman/mason.nvim",
-            "neovim/nvim-lspconfig",
-            "saghen/blink.cmp",
+    dependencies = {
+        "williamboman/mason.nvim",
+        "neovim/nvim-lspconfig",
+        "saghen/blink.cmp",
     },
 }
