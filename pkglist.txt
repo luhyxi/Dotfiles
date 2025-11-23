@@ -14,4 +14,4 @@ dotnet-runtime
 dotnet-sdk
 curl
 cowsay
-
+neofetch

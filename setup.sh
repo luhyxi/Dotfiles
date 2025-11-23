@@ -3,6 +3,7 @@
 # Create necessary directories if they don't exist
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/tmux/tmux.conf
 
 # Link bash configuration
 ln -sf ~/Dotfiles/bashrc ~/.bashrc
@@ -12,7 +13,7 @@ ln -sf ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -sf ~/Dotfiles/kitty/current-theme.conf ~/.config/kitty/current-theme.conf
 
 # Link tmux configuration
-ln -sf ~/Dotfiles/tmux.conf ~/.tmux.conf
+ln -sf ~/Dotfiles/tmux.conf ~/,config/tmux/tmux.conf
 
 # Link nvim configuration (entire directory)
 rm -rf ~/.config/nvim
