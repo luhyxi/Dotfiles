@@ -1,3 +1,4 @@
+vim.lsp.enable({'gopls', 'lua_ls', 'vimls', 'bashls', 'pyright', 'neocmake', 'perlnavigator'}, false)
 local opt = vim.opt
 local cmd = vim.cmd
 

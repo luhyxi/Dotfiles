@@ -12,11 +12,4 @@ return {
         "lewis6991/gitsigns.nvim",
         opts = {},
     },
-    "williamboman/mason-lspconfig.nvim",
-
-    dependencies = {
-        "williamboman/mason.nvim",
-        "neovim/nvim-lspconfig",
-        "saghen/blink.cmp",
-    },
 }
