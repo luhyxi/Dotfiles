@@ -23,6 +23,7 @@ return {
             require("mason.ts_ls").setup(capabilities, on_attach)
             require("mason.biome").setup(capabilities, on_attach)
             require("mason.gopls").setup(capabilities, on_attach)
+            require("mason.clangd").setup(capabilities, on_attach)
         end,
     },
 }
