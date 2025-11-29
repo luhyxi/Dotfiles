@@ -59,6 +59,7 @@ alias l='eza -1 --icons --group-directories-first'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
+alias ii='dolphin'
 alias renamefolder='mv -i'
 
 # Grep
