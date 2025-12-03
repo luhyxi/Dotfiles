@@ -47,6 +47,8 @@ map("v", "d", '"_d', { noremap = true, silent = true, desc = "Delete without cop
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Show avalible code actions" })
 map("n", "<leader>=", "gg=G", { desc = "Format entire file with = operator" })
 
+map("n", "<leader>G", ":Gitsigns preview_hunk<CR>", { desc = "Preview git hunk" })
+
 -- tmux keymaps
 map("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
 map("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)

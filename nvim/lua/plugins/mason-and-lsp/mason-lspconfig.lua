@@ -24,6 +24,7 @@ return {
             require("mason.biome").setup(capabilities, on_attach)
             require("mason.gopls").setup(capabilities, on_attach)
             require("mason.clangd").setup(capabilities, on_attach)
+            require("mason.bashls").setup(capabilities, on_attach)
         end,
     },
 }
