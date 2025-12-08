@@ -5,16 +5,11 @@ local M = {}
 function M.setup(capabilities, on_attach)
     lspconfig.clangd.setup({
         capabilities = capabilities,
-        on_attach = function(client, bufnr)
-            if on_attach then
-                on_attach(client, bufnr)
-            end
-        end,
+        on_attach = on_attach,
         cmd = {
             "clangd",
             "--background-index",
-            "--clang-tidy",
-            "--completion-style=detailed",
+            "--completion-style=detailed"
        },
         init_options = {
             clangdFileStatus = true,

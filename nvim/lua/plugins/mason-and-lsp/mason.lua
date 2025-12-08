@@ -6,6 +6,6 @@ return {
                 "github:Crashdummyy/mason-registry", -- Add this registry
                 "github:mason-org/mason-registry",
             },
-        },
+       },
     },
 }
