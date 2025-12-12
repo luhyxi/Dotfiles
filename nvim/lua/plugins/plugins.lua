@@ -5,5 +5,6 @@ return {
     { import = "plugins.misc" },
     { import = "plugins.text-editing" },
     { import = "plugins.navigation" },
-    { import = "plugins.mason-and-lsp" }
+    { import = "plugins.mason-and-lsp" },
+    { import = "plugins.db" },
 }
