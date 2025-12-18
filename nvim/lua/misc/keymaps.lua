@@ -10,25 +10,6 @@ map("n", "<leader>b", builtin.buffers, { desc = "Opens GREP for recent buffers" 
 map("n", "<leader>q", ":quit<CR>", { desc = "Quits buffer" })
 map("n", "<leader>w", ":write<CR>", { desc = "Writes to buffer" })
 
--- Insert mode stuff
-map("i", "<A-d>", [[<Esc>dwi]], { noremap = true, silent = true, desc = "Deletes next word" })
-
--- Tab stuff
-map("n", "<leader>tt", ":tabnew<CR>", { desc = "New tab" })
-map("n", "<leader>tq", ":tabclose<CR>", { desc = "Close tab" })
-map("n", "<A-,>", "gT", { desc = "Go to previous tab" })
-map("n", "<A-.>", "gt", { desc = "Go to next tab" })
-
--- Splitter resizing and stuff
-map("n", "<A-S-k>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
-map("n", "<A-S-j>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
-map("n", "<A-S-h>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
-map("n", "<A-S-l>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
-map("n", "<A-h>", "<C-w>h", { desc = "Move to left window" })
-map("n", "<A-j>", "<C-w>j", { desc = "Move to bottom window" })
-map("n", "<A-k>", "<C-w>k", { desc = "Move to top window" })
-map("n", "<A-l>", "<C-w>l", { desc = "Move to right window" })
-
 -- LSP Keymaps
 map("n", "K", vim.lsp.buf.hover, { desc = "Display info over function" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error messages" })

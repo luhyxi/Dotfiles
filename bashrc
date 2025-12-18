@@ -21,6 +21,7 @@ export PATH=$HOME/.config/composer/vendor/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$HOME/.dotnet/tools:$PATH
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Default applications
 export EDITOR=nvim
@@ -33,6 +34,7 @@ export XMODIFIERS=@im=fcitx
 export INPUT_METHOD=fcitx
 export OMNISHARP=$HOME/.local/share/nvim/mason/packages/omnisharp/OmniSharp
 export DOTNET_ROOT=$HOME/.dotnet
+export BUN_INSTALL="$HOME/.bun"
 
 # History settings
 export HISTSIZE=10000
@@ -70,6 +72,7 @@ alias fgrep='fgrep --color=auto'
 # Development
 alias v='nvim'
 alias n='nvim'
+alias nw='nvim -c VimwikiIndex'
 alias vim='nvim'
 alias nconf='cd ~/.config/nvim'
 alias sn='sudo nvim'

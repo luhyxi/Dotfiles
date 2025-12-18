@@ -19,3 +19,4 @@ luarocks
 syncthing
 docker
 docker-compose
+cmake
