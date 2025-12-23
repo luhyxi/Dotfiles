@@ -2,7 +2,7 @@ neovim
 git
 yazi
 fd
-rg
+ripgrep
 fzf
 zoxide
 xclip
@@ -14,9 +14,9 @@ dotnet-runtime
 dotnet-sdk
 curl
 cowsay
-neofetch
 luarocks
 syncthing
 docker
 docker-compose
 cmake
+man

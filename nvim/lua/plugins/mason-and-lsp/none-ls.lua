@@ -5,6 +5,7 @@ return {
             local nls = require("null-ls").builtins
             opts.sources = vim.list_extend(opts.sources or {}, {
                 nls.formatting.gofmt,
+                nls.diagnostics.shellcheck,
                 nls.formatting.goimports,
                 nls.formatting.clang_format.with({
                     extra_args = { "--style=file" }}),

@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 # Create necessary directories if they don't exist
 mkdir -p ~/.config/kitty
@@ -23,3 +23,6 @@ ln -sf ~/Dotfiles/nvim ~/.config/nvim
 echo "Dotfiles linked successfully!"
 echo "Created links:"
 ls -la ~/.bashrc ~/.config/kitty/ ~/.config/nvim 
+
+echo "adding startship"
+curl -sS https://starship.rs/install.sh | sh
