@@ -15,19 +15,9 @@ map("n", "K", vim.lsp.buf.hover, { desc = "Display info over function" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error messages" })
 map("n", "gd", builtin.lsp_definitions, { desc = "Go to definition (Telescope)" })
 
-map(
-    "n",
-    "grr",
-    builtin.lsp_references,
-    { desc = "Lists all references using Telescope" }
-)
+map("n", "grr", builtin.lsp_references, { desc = "Lists all references using Telescope" })
 
-map(
-    "n",
-    "gtd",
-    builtin.lsp_type_definitions,
-    { desc = "Go to type definition (Telescope)" }
-)
+map("n", "gtd", builtin.lsp_type_definitions, { desc = "Go to type definition (Telescope)" })
 
 map("n", "d", '"_d', { noremap = true, silent = true, desc = "Delete without copying" })
 map("v", "d", '"_d', { noremap = true, silent = true, desc = "Delete without copying" })
