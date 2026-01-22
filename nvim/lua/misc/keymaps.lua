@@ -22,6 +22,7 @@ map("n", "gtd", builtin.lsp_type_definitions, { desc = "Go to type definition (T
 map("n", "d", '"_d', { noremap = true, silent = true, desc = "Delete without copying" })
 map("v", "d", '"_d', { noremap = true, silent = true, desc = "Delete without copying" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Show avalible code actions" })
+
 map("n", "<leader>=", vim.lsp.buf.format, { desc = "Format entire file with = operator" })
 
 map("n", "<leader>G", ":Gitsigns preview_hunk<CR>", { desc = "Preview git hunk" })

@@ -20,3 +20,5 @@ docker
 docker-compose
 cmake
 man
+tree-sitter-cli
+kubectl

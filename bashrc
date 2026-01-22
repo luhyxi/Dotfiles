@@ -79,7 +79,7 @@ alias sn='sudo nvim'
 alias sv='sudo nvim'
 alias xstart='n ~/.xinitrc'
 alias z='zoxide'
-
+alias k='kubectl'
 
 # System
 alias p='sudo pacman'
@@ -199,3 +199,4 @@ eval "$(zoxide init bash)"
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion
 fi
+. "/home/luana/.deno/env"
