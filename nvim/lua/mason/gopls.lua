@@ -1,9 +1,7 @@
-local lspconfig = require("lspconfig")
-
 local M = {}
 
 function M.setup(capabilities, on_attach)
-    lspconfig.gopls.setup({
+    vim.lsp.config('gopls', {
         capabilities = capabilities,
         on_attach = on_attach,
         settings = {
@@ -19,6 +17,7 @@ function M.setup(capabilities, on_attach)
             },
         },
     })
+    vim.lsp.enable('denols')
 end
 
 return M

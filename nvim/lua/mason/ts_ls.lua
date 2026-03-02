@@ -4,7 +4,7 @@ local util = require("lspconfig.util")
 local M = {}
 
 function M.setup(capabilities, on_attach)
-    lspconfig.ts_ls.setup({
+    vim.lsp.config('ts_ls', {
         capabilities = capabilities,
         on_attach = on_attach,
 
@@ -43,6 +43,7 @@ function M.setup(capabilities, on_attach)
             },
         },
     })
+    vim.lsp.enable('ts_ls')
 end
 
 return M

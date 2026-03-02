@@ -1,9 +1,7 @@
-local lspconfig = require("lspconfig")
-
 local M = {}
 
 function M.setup(capabilities, on_attach)
-    lspconfig.clangd.setup({
+    vim.lsp.config('clangd', {
         capabilities = capabilities,
         on_attach = on_attach,
         cmd = {
@@ -17,6 +15,7 @@ function M.setup(capabilities, on_attach)
             completeUnimported = true,
         },
     })
+    vim.lsp.enable('clangd')
 end
 
 return M

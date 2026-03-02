@@ -1,9 +1,7 @@
-local lspconfig = require("lspconfig")
-
 local M = {}
 
 function M.setup(capabilities, on_attach)
-    lspconfig.biome.setup({
+    vim.lsp.config('biome', {
         capabilities = capabilities,
         on_attach = function(client, bufnr)
             if on_attach then
@@ -30,6 +28,7 @@ function M.setup(capabilities, on_attach)
             })
         end,
     })
+    vim.lsp.enable('biome')
 end
 
 return M
