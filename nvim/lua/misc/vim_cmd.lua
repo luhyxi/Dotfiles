@@ -1,4 +1,4 @@
-vim.lsp.enable({'gopls', 'lua_ls', 'vimls', 'bashls', 'pyright', 'neocmake', 'perlnavigator'}, false)
+vim.lsp.enable({'gopls', 'vimls', 'bashls', 'pyright', 'neocmake', 'perlnavigator'}, false)
 local opt = vim.opt
 local cmd = vim.cmd
 
@@ -24,6 +24,7 @@ opt.incsearch = true
 
 -- visual settings
 opt.colorcolumn = "140"
+opt.cursorline = true
 opt.signcolumn = "yes"
 
 -- file handling
