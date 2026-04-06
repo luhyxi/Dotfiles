@@ -33,7 +33,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export INPUT_METHOD=fcitx
 export OMNISHARP=$HOME/.local/share/nvim/mason/packages/omnisharp/OmniSharp
-export DOTNET_ROOT=$HOME/.dotnet
+export DOTNET_ROOT=/usr/share/dotnet
+export PATH=$PATH:/usr/share/dotnet:$HOME/.dotnet/tools
 export BUN_INSTALL="$HOME/.bun"
 
 # History settings
