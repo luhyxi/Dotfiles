@@ -34,5 +34,5 @@
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vimwiki": { "branch": "dev", "commit": "a54a3002e229c4b43d69ced170ff77663a5b2c40" },
   "vscode": { "branch": "main", "commit": "aa1102a7e15195c9cca22730b09224a7f7745ba8" },
-  "yazi.nvim": { "branch": "main", "commit": "d6ffa819eac0acc071664aa3d8a10c02f66ee0b6" }
+  "yazi.nvim": { "branch": "main", "commit": "250c16e80c1f9d885052b525312baf37f0695ebb" }
 }

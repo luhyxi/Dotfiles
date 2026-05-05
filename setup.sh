@@ -6,18 +6,22 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/tmux/tmux.conf
 
 # Link bash configuration
-ln -sf ~/Dotfiles/bashrc ~/.bashrc
+ln -sr ./bashrc ~/.bashrc
 
 # Link kitty configuration
-ln -sf ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -sf ~/Dotfiles/kitty/current-theme.conf ~/.config/kitty/current-theme.conf
+ln -sr ./kitty/kitty.conf ~/.config/kitty/kitty.conf
+ln -sr ./kitty/current-theme.conf ~/.config/kitty/current-theme.conf
 
 # Link tmux configuration
-ln -sf ~/Dotfiles/tmux.conf ~/,config/tmux/tmux.conf
+ln -sr ./tmux.conf ~/,config/tmux/tmux.conf
 
 # Link nvim configuration (entire directory)
 rm -rf ~/.config/nvim
-ln -sf ~/Dotfiles/nvim ~/.config/nvim
+ln -sr ./nvim ~/.config/nvim
+
+# Adding music daemon and rusty music player client
+ln -sr ./rmpc/ ~/.config/
+ln -sr ./mpd/ ~/.config/
 
 # Verify links were created
 echo "Dotfiles linked successfully!"
