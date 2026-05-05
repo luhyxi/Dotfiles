@@ -1,4 +1,4 @@
-vim.lsp.enable({'vimls', 'bashls', 'pyright', 'neocmake', 'perlnavigator'}, false)
+vim.lsp.enable({'vimls', 'pyright', 'neocmake', 'perlnavigator'}, false)
 local opt = vim.opt
 local cmd = vim.cmd
 

@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(capabilities, on_attach)
-    vim.lsp.config('bashls', {
+    vim.lsp.config("bashls", {
         capabilities = capabilities,
         on_attach = function(client, bufnr)
             if on_attach then
@@ -9,7 +9,7 @@ function M.setup(capabilities, on_attach)
             end
         end,
     })
-    vim.lsp.enable('bashls')
+    vim.lsp.enable("bashls")
 end
 
 return M

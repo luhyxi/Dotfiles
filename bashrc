@@ -36,6 +36,7 @@ export OMNISHARP=$HOME/.local/share/nvim/mason/packages/omnisharp/OmniSharp
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:/usr/share/dotnet:$HOME/.dotnet/tools
 export BUN_INSTALL="$HOME/.bun"
+export MPD_HOST="$XDG_RUNTIME_DIR/mpd/socket"
 
 # History settings
 export HISTSIZE=10000
@@ -65,15 +66,11 @@ alias rm='rm -iv'
 alias ii='dolphin'
 alias renamefolder='mv -i'
 
-# Grep
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
 # Development
 alias v='nvim'
 alias n='nvim'
 alias nw='nvim -c VimwikiIndex'
+alias nd='nvim -c VimwikiMakeDiaryNote'
 alias vim='nvim'
 alias nconf='cd ~/.config/nvim'
 alias sn='sudo nvim'

@@ -11,6 +11,10 @@ return {
                 },
             }
             vim.g.vimwiki_global_ext = 0
+            vim.api.nvim_create_autocmd('BufNewFile', {
+                pattern = '*diary/*.md',
+                command = "0r! ~/Documents/wiki/diary.py '%'",
+            })
             vim.api.nvim_create_user_command("DiaryTemplate", function()
                 vim.cmd("silent 0r !~/Documents/wiki/diary/generate-diary-template '%'")
             end, {})
