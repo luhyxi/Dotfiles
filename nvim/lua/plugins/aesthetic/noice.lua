@@ -15,6 +15,17 @@ return {
                 ["vim.lsp.util.stylize_markdown"] = true,
                 ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
             },
+            routes = {
+                {
+                    filter = {
+                        any = {
+                            { find = "basedpyright" },
+                            { find = "Pyright" }, -- sometimes it reports as Pyright
+                        },
+                    },
+                    opts = { skip = true },
+                },
+            },
         },
         dependencies = {
             "MunifTanjim/nui.nvim",

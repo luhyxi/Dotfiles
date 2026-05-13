@@ -198,3 +198,8 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion
 fi
 . "/home/luana/.deno/env"
+
+# starting with tmux every time I enter the PC
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi

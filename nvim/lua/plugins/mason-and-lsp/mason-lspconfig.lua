@@ -26,6 +26,7 @@ return {
             require("mason.gopls").setup(capabilities, on_attach)
             require("mason.clangd").setup(capabilities, on_attach)
             require("mason.bashls").setup(capabilities, on_attach)
+            require("mason.python").setup(capabilities, on_attach)
         end,
     },
 }

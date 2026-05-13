@@ -1,6 +1,5 @@
-vim.lsp.enable({'vimls', 'pyright', 'neocmake', 'perlnavigator'}, false)
+vim.lsp.enable({'vimls', 'neocmake', 'perlnavigator'}, false)
 local opt = vim.opt
-local cmd = vim.cmd
 
 -- setting plugins up
 --cmd('filetype plugin indent on')
