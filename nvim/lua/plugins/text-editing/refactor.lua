@@ -1,12 +1,6 @@
-return {
-    {
-        "ThePrimeagen/refactoring.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "lewis6991/async.nvim",
-        },
-        lazy = false,
-        opts = {},
-    },
-}
+local gh = require("misc.const").gh
+
+vim.pack.add({
+    { src = gh("ThePrimeagen/refactoring.nvim") },
+    { src = gh("lewis6991/async.nvim") },
+})

@@ -1,16 +1,9 @@
-return {
+local gh = require("misc.const").gh
+
+vim.pack.add({
     {
-        "nvim-treesitter/nvim-treesitter",
-        lazy = false,
+        src = gh("nvim-treesitter/nvim-treesitter"),
         build = ":TSUpdate",
         install_dir = vim.fn.stdpath("data") .. "/site",
-        config = function()
-            vim.api.nvim_create_autocmd("FileType", {
-                pattern = { "cpp, hpp" },
-                callback = function()
-                    vim.treesitter.start()
-                end,
-            })
-        end,
     },
-}
+})

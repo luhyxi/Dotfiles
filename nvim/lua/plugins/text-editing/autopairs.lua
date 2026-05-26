@@ -1,18 +1,18 @@
-return {
+local gh = require("misc.const").gh
+local setup = require("misc.utils").setup
+
+vim.pack.add({
     {
-        "windwp/nvim-autopairs",
-        config = function()
-            local npairs = require("nvim-autopairs")
-            npairs.setup({
-                check_ts = true,
-                ts_config = {
-                    lua = { "string" },
-                    javascript = { "template_string" },
-                },
-            })
-        end,
+        src = gh("windwp/nvim-autopairs"),
         dependencies = {
-            "nvim-treesitter/nvim-treesitter",
+            { src = gh("nvim-treesitter/nvim-treesitter") },
         },
+        config = setup("nvim-autopairs", {
+            check_ts = true,
+            ts_config = {
+                lua = { "string" },
+                javascript = { "template_string" },
+            },
+        }),
     },
-}
+})

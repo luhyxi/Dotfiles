@@ -1,8 +1,6 @@
-return {
-    {
-        "stevearc/overseer.nvim",
-        ---@module 'overseer'
-        ---@type overseer.SetupOpts
-        opts = {},
-    },
-}
+local gh = require("misc.const").gh
+
+vim.pack.add({
+	{ src = gh("stevearc/overseer.nvim") },
+})
+

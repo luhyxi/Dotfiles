@@ -3,6 +3,9 @@ local nvim_tmux_nav = require("nvim-tmux-navigation")
 
 local builtin = require("telescope.builtin")
 
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
+
 -- Explorer stuff
 map("n", "<leader>f", builtin.find_files, { desc = "Find files in the working directory" })
 map("n", "<leader>g", builtin.live_grep, { desc = "Live GREPs the working directory" })

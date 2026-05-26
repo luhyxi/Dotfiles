@@ -1,3 +1,5 @@
-return {
-    { "sphamba/smear-cursor.nvim", opts = {} },
-}
+local gh = require("misc.const").gh
+
+vim.pack.add({
+    { src = gh("nvim-lualine/lualine.nvim") },
+})

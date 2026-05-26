@@ -1,6 +1,5 @@
-return {
-    {
-        "alexghergh/nvim-tmux-navigation",
-        lazy = false,
-    }
-}
+local gh = require("misc.const").gh
+
+vim.pack.add({
+    { src = "https://github.com/alexghergh/nvim-tmux-navigation" },
+})

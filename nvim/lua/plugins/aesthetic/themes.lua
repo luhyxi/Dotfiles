@@ -1,17 +1,15 @@
-return {
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-	},
-	{
-		"Mofiqul/vscode.nvim",
-		name = "vscode",
-		priority = 1000,
-		transparent = true,
-		terminal_colors = true,
-        italic_comments = true,
-        disable_nvimtree_bg = true,
-        underline_links = true,
-	},
-}
+local gh = require("misc.const").gh
+
+vim.pack.add({
+    { src = gh("catppuccin/nvim") },
+    { src = gh("Mofiqul/vscode.nvim"), name = "vscode" },
+})
+
+require("vscode").setup({
+    terminal_colors = true,
+    italic_comments = true,
+    disable_nvimtree_bg = true,
+    underline_links = true,
+})
+
+vim.cmd.colorscheme("vscode")
