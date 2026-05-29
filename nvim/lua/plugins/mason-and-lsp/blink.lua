@@ -42,4 +42,6 @@ require("blink.cmp").setup({
     },
 })
 
-require("blink.cmp").build():wait(60000)
+if vim.fn.executable("cargo") == 1 then
+    require("blink.cmp").build():wait(60000)
+end

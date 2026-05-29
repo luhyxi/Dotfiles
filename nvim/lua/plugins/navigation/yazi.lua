@@ -4,12 +4,21 @@ vim.pack.add({
     { src = gh("mikavilpas/yazi.nvim"), name = "yazi" },
 })
 
-require("yazi").setup({
-    open_for_directories = true,
-    keymaps = {
-        show_help = "<f1>",
-        change_working_directory = "<c-w>",
-    },
-})
-
-vim.keymap.set("n", "<leader>y", "<cmd>Yazi<cr>", { desc = "Open yazi at the current file" })
+local ok, yazi = pcall(require, "yazi")
+if ok then
+    yazi.setup({
+        open_for_directories = true,
+        keymaps = {
+            show_help = "<f1>",
+            change_working_directory = "<c-w>",
+        },
+    })
+    vim.g.loaded_netrwPlugin = 1
+    vim.api.nvim_create_autocmd("UIEnter", {
+        callback = function()
+            require("yazi").setup({
+                open_for_directories = true,
+            })
+        end,
+    })
+end

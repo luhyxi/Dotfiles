@@ -1,6 +1,7 @@
 local gh = require("misc.const").gh
 
 vim.pack.add({
+    { src = gh("nvim-lua/plenary.nvim"), name = "plenary" },
     { src = gh("nvim-telescope/telescope.nvim"), name = "telescope" },
     { src = gh("nvim-telescope/telescope-ui-select.nvim") },
 })
