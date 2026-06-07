@@ -28,6 +28,10 @@
       "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "guttermarks.nvim": {
+      "rev": "50088f99c2e978afe7f8e339e98b397babc7cbd2",
+      "src": "https://github.com/dimtion/guttermarks.nvim"
+    },
     "lualine": {
       "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
