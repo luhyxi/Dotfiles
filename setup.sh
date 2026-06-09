@@ -15,6 +15,9 @@ ln -sr ./kitty/current-theme.conf ~/.config/kitty/current-theme.conf
 # Link tmux configuration
 ln -sr ./tmux.conf ~/,config/tmux/tmux.conf
 
+# Link vim configuration
+ln -sr ./vimrc ~/.vimrc
+
 # Link nvim configuration (entire directory)
 rm -rf ~/.config/nvim
 ln -sr ./nvim ~/.config/nvim

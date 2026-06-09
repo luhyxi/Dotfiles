@@ -22,6 +22,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 
 # Default applications
 export EDITOR=nvim
@@ -67,15 +68,9 @@ alias ii='dolphin'
 alias renamefolder='mv -i'
 
 # Development
-alias v='nvim'
-alias n='nvim'
-alias nw='nvim -c VimwikiIndex'
-alias nd='nvim -c VimwikiMakeDiaryNote'
-alias vim='nvim'
-alias nconf='cd ~/.config/nvim'
-alias sn='sudo nvim'
-alias sv='sudo nvim'
-alias xstart='n ~/.xinitrc'
+alias vi='vim'
+alias vw='vim -c VimwikiIndex'
+alias vd='vim -c VimwikiMakeDiaryNote'
 alias z='zoxide'
 alias k='kubectl'
 
