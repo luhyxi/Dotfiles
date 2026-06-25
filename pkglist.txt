@@ -5,7 +5,6 @@ fd
 ripgrep
 fzf
 zoxide
-xclip
 wl-clipboard
 bat
 eza
@@ -22,3 +21,5 @@ cmake
 man
 tree-sitter-cli
 kubectl
+zathura
+newsboat

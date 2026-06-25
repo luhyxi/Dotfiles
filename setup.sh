@@ -12,8 +12,11 @@ ln -sr ./bashrc ~/.bashrc
 ln -sr ./kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -sr ./kitty/current-theme.conf ~/.config/kitty/current-theme.conf
 
+# Link zathura configuration
+ln -sr ./zathurarc ~/.config/zathura/zathurarc
+
 # Link tmux configuration
-ln -sr ./tmux.conf ~/,config/tmux/tmux.conf
+ln -sr ./tmux.conf ~/.config/tmux/tmux.conf
 
 # Link vim configuration
 ln -sr ./vimrc ~/.vimrc

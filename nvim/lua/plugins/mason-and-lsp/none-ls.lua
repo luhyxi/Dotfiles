@@ -9,7 +9,6 @@ local nls = require("null-ls")
 nls.setup({
     sources = {
         nls.builtins.formatting.gofmt,
-        nls.builtins.diagnostics.shellcheck,
         nls.builtins.formatting.goimports,
         nls.builtins.formatting.clang_format.with({
             extra_args = { "--style=file" },

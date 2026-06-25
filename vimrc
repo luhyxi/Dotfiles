@@ -1,7 +1,18 @@
+" ------------------------------------------
+"                  MISC
+" ------------------------------------------
+
 let mapleader = ","
 let maplocalleader = ","
 
-set clipboard=unnamedplus,unnamed
+let g:clipboard = {
+  \   'name': 'wl-clipboard',
+  \   'copy':  { '+': 'wl-copy',               '*': 'wl-copy' },
+  \   'paste': { '+': 'wl-paste --no-newline',  '*': 'wl-paste --no-newline' },
+  \   'cache_enabled': 1,
+  \ }
+
+set clipboard=unnamedplus
 
 set nocompatible
 filetype plugin on
@@ -11,11 +22,10 @@ filetype indent on
 set mouse=a
 set number
 set relativenumber
-set updatetime=100
+set updatetime=1000
 set ruler
 set backspace=indent,eol,start
 
-" Tabs and indenting
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -24,19 +34,20 @@ set expandtab
 set noshiftround
 set scrolloff=3
 
-" Command line completion options
 set showcmd
 set wildmenu
 
-" searching
 set incsearch
 set hlsearch
 set ignorecase
 
-" Plugins
+" ------------------------------------------
+"                 PLUGINS
+" ------------------------------------------
 call plug#begin()
 
 Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'tpope/vim-sensible'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
@@ -48,7 +59,9 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-" LSP
+" ------------------------------------------
+"                   LSP
+" ------------------------------------------
 if executable('csharp-ls')
     au User lsp_setup call lsp#register_server({
                 \ 'name': 'csharp-ls',
@@ -64,13 +77,15 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> K <plug>(lsp-hover)
 endfunction
 
-
 augroup lsp_install
     au!
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" Vim-Wiki
+" ------------------------------------------
+"                 VIM-WIKI
+" ------------------------------------------
+
 let g:vimwiki_list = [{'syntax':'markdown',
             \  'path': '~/Documents/wiki',
             \  'ext':'md'}]
@@ -80,5 +95,31 @@ augroup DiaryTemplate
     autocmd BufNewFile *diary/*.md 0r! ~/Documents/wiki/diary.py '%'
 augroup END
 
-" Theme
+" ------------------------------------------
+"                AUTOSAVE
+" ------------------------------------------
+augroup autosave
+    autocmd!
+    autocmd BufRead * if &filetype == "" | setlocal ft=text | endif
+    autocmd FileType * autocmd CursorHold,CursorHoldI <buffer> if &readonly == 0 && filereadable(bufname('%')) | silent write | endif
+augroup END
+
+" Use persistent history
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+
+" ------------------------------------------
+"                REMAPS 
+" ------------------------------------------
+noremap  [1;5D b
+noremap  [1;5C w
+inoremap [1;5D <C-o>b
+inoremap [1;5C <C-o>w
+
+" ------------------------------------------
+"                THEME
+" ------------------------------------------
 colorscheme codedark

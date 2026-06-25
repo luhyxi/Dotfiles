@@ -5,10 +5,6 @@
 # 
 #
 
-# -----------------------------------------------------------------------------
-# BASIC SETUP
-# -----------------------------------------------------------------------------
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -25,8 +21,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 
 # Default applications
-export EDITOR=nvim
-export VISUAL=nvim
+export GOPATH=$HOME/.config/go
+export EDITOR=vim
+export VISUAL=vim
 export MANPAGER='nvim +Man!'
 export PAGER=less
 export GTK_IM_MODULE=fcitx
@@ -52,20 +49,9 @@ export HISTIGNORE="ls:cd:exit:clear:history"
 # Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 
 # File operations
-# Fancy eza aliases
-alias ls='eza --color=auto --icons --group-directories-first'
-alias ll='eza -l --icons --group-directories-first --git'
-alias la='eza -la --icons --group-directories-first --git'
-alias l='eza -1 --icons --group-directories-first'
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -iv'
 alias ii='dolphin'
-alias renamefolder='mv -i'
 
 # Development
 alias vi='vim'
@@ -105,11 +91,6 @@ function y() {
   rm -f -- "$tmp"
 }
 
-# Create a directory and cd into it
-mkcd() {
-  mkdir -p "$1" && cd "$1"
-}
-
 # Extract most known archives
 extract() {
   if [ -f "$1" ]; then
@@ -130,16 +111,6 @@ extract() {
   else
     echo "'$1' is not a valid file"
   fi
-}
-
-# Find text in files
-ftext() {
-  rg "$1" .
-}
-
-# Use bat instead of cat for printing files
-catt() {
-    bat --style="plain,rule,header" --paging=never --italic-text=always $@
 }
 
 # -----------------------------------------------------------------------------
