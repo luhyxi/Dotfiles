@@ -22,8 +22,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 
 # Default applications
 export GOPATH=$HOME/.config/go
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export MANPAGER='nvim +Man!'
 export PAGER=less
 export GTK_THEME=Adwaita:dark
@@ -55,9 +55,9 @@ alias ...='cd ../..'
 alias ii='dolphin'
 
 # Development
-alias vi='vim'
-alias vw='vim -c VimwikiIndex'
-alias vd='vim -c VimwikiMakeDiaryNote'
+alias vi='nvim'
+alias vw='nvim -c VimwikiIndex'
+alias vd='nvim -c VimwikiMakeDiaryNote'
 alias z='zoxide'
 alias k='kubectl'
 
@@ -166,7 +166,10 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 fi
 . "/home/luana/.deno/env"
 
-# starting with tmux every time I enter the PC
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && 
+    [[ "$SSH_CONNECTION" == "" ]]; then
+    tmux attach-session -t default || tmux new-session -s default
 fi
+
+# Created by `pipx` on 2026-07-07 10:12:09
+export PATH="$PATH:/home/luana/.local/bin"
