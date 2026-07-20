@@ -8,6 +8,7 @@ function M.setup(capabilities, on_attach)
             "clangd",
             "--background-index",
             "--completion-style=detailed",
+            "--clang-tidy",
         },
         init_options = {
             clangdFileStatus = true,

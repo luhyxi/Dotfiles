@@ -18,5 +18,6 @@ nls.setup({
         }),
         nls.builtins.formatting.stylua,
         nls.builtins.code_actions.gitsigns,
+        nls.builtins.diagnostics.cppcheck,
     },
 })
